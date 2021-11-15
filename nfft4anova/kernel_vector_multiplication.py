@@ -59,7 +59,6 @@ class kernel_vector_multiplication:
     >>> multiply = kernel_vector_multiplication(sigma=100)
     >>> p = np.random.rand((X.shape[0]))
     >>> multiply.compare_multiplication(X, p)
-    
     """
     
     def __init__(self, sigma=1.0, norm='z-score', setup='default', mis_threshold = 0.0, window_scheme='consec', pre_list=[], weight_scheme='equally weighted'):
