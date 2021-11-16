@@ -6,13 +6,14 @@ This package uses the [FastAdjacency](https://github.com/dominikalfke/FastAdjace
 
 # Installation
 - This software has been tested with Python 3.8.
-- This software depends on Alfke's FastAdjacency Package. We refer to https://github.com/dominikalfke/FastAdjacency#readme.
+- This software depends on Alfke's FastAdjacency Package. We refer to https://github.com/dominikalfke/FastAdjacency#readme for installation instructions.
 
 
 # Usage
 
 This package consists of the following three classes:
-- jhdvf
-- djaskvg
+- `NFFTKernelRidge`
+- `GridSearch`
+- `kernel_vector_multiplication`
 
-See ->showcase and ->showcase for an example.
+See [showcase_nfft_krr.ipynb]() and [showcase_kernel_vector_multiplication.ipynb](https://github.com/wagnertheresa/NFFT4ANOVA/blob/main/test/showcase_kernel_vector_multiplication.ipynb) for an example.
