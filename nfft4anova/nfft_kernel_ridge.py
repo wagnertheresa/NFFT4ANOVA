@@ -78,7 +78,7 @@ class NFFTKernelRidge:
     >>> N, d = 25000, 15
     >>> rng = np.random.RandomState(0)
     >>> X = rng.randn(N, d)
-    >>> y = rng.randn(N)
+    >>> y = np.sign(rng.randn(N))
     >>> X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, random_state=42)
     >>> clf = NFFTKernelRidge
     >>> clf.fit(X_train, y_train)
@@ -169,6 +169,16 @@ class NFFTKernelRidge:
             Z-score normalized data.
         """
         if dt_train == True:
+            # define global variable aux_scale to normalize test data using the statistics of the training data
+            global aux_scale
+            aux_scale = X
+            
+            scaler = StandardScaler()
+            scaler.fit(X)
+        else:
+            scaler = StandardScaler()
+            scaler.fit(aux_scale)
+            
             scaler = StandardScaler()
             scaler.fit(X)
 
@@ -352,7 +362,7 @@ class NFFTKernelRidge:
         """
         # balance the class distribution of the data by under-sampling the over-represenetd class
         if self.balance == True:
-            X, y = self.under_sample(X, y, self.n_samples)
+            X, y = self.under_sample(X, y)
         
         # scale data with z-score-normalization
         if self.norm == 'z-score':
@@ -500,7 +510,7 @@ class GridSearch:
     >>> N, d = 25000, 15
     >>> rng = np.random.RandomState(0)
     >>> X = rng.randn(N, d)
-    >>> y = rng.randn(N)
+    >>> y = np.sign(rng.randn(N))
     >>> X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, random_state=42)
     >>> param_grid = {
         "sigma": [0.001, 0.01, 0.1, 1, 10, 100, 1000],
