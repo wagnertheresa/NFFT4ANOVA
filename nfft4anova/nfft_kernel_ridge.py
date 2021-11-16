@@ -76,7 +76,7 @@ class NFFTKernelRidge:
     >>> import numpy as np
     >>> from sklearn.model_selection import train_test_split
     >>> N, d = 25000, 15
-    >>> rng.np.random.RandomState(0)
+    >>> rng = np.random.RandomState(0)
     >>> X = rng.randn(N, d)
     >>> y = rng.randn(N)
     >>> X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, random_state=42)
@@ -498,7 +498,7 @@ class GridSearch:
     >>> import numpy as np
     >>> from sklearn.model_selection import train_test_split
     >>> N, d = 25000, 15
-    >>> rng.np.random.RandomState(0)
+    >>> rng = np.random.RandomState(0)
     >>> X = rng.randn(N, d)
     >>> y = rng.randn(N)
     >>> X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, random_state=42)
