@@ -1,5 +1,5 @@
 # NFFT4ANOVA
-### Source code for our Paper "Learning in High-Dimensional Feature Spaces Using ANOVA-Based Matrix-Vector Multiplication"
+### Source code for our Paper ["Learning in High-Dimensional Feature Spaces Using ANOVA-Based Matrix-Vector Multiplication"](https://arxiv.org/abs/2111.10140)
 
 This package uses the [FastAdjacency](https://github.com/dominikalfke/FastAdjacency) package by Dominik Alfke to perform NFFT-based fast summation to speed up kernel-vector multiplications for the ANOVA kernel. It is targeted at large-scale kernel evaluations. We demonstrate our method's computational power by using it for kernel ridge regression, which is just one of many possible applications. For more details, see the above-mentioned paper. A huge benefit of this package is that even for very large-scale data, all codes can easily be run on a standard laptop computer in absolutely reasonable time, so that no superior hardware is required.
 
