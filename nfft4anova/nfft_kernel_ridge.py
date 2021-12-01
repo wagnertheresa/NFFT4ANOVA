@@ -9,7 +9,6 @@ by F. Nestler, M. Stoll, T. Wagner (2021)
 import numpy as np
 import pandas as pd
 import fastadj
-import warnings
 import time
 import random
 import itertools
@@ -131,7 +130,7 @@ class NFFTKernelRidge:
         if self.n_samples == None:
             num = n_max
         elif self.n_samples > n_max:
-            warnings.warn("n_samples exceeds the number of samples per class for the biggest possible balanced subset for the input data. Therefore, the biggest possible balanced subset is constructed.")
+            raise Warning("n_samples exceeds the number of samples per class for the biggest possible balanced subset for the input data. Therefore, the biggest possible balanced subset is constructed.")
             num = n_max
         else:
             num = self.n_samples
